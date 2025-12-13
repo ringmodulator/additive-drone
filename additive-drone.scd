@@ -13,6 +13,8 @@ Initial goals for this piece:
 // Drone instrument
 // Plays a note at a given frequency
 // Envelope has initial silent pause, 4 second attack, parameterized sustain time, 4 second fade.
+
+(
 SynthDef(
 	\drone,
 	{
@@ -26,6 +28,7 @@ SynthDef(
 		snd = Pan2.ar(snd, SinOsc.kr(pan));
 		Out.ar(out, snd);
 	}
+)
 )
 
 // Play instrument
