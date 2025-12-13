@@ -1,5 +1,15 @@
 s.boot;
 
+/*
+Initial goals for this piece:
+
+- Synth is a simple additive instrument with an ASR envelope that includes an initial silent pause.
+- Piece will be made up of loops that fall out of alignment because the pause and sustain segments are randomized.
+- There will be a "score" that says when each loop starts and ends and specifies frequency and any other parameters.
+- Piece will use the same tuning system as "7 limit drone".
+*/
+
+
 // Drone instrument
 // Plays a note at a given frequency
 // Envelope has initial silent pause, 4 second attack, parameterized sustain time, 4 second fade.
