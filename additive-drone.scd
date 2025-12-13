@@ -57,18 +57,23 @@ dur = rrand(0.1, 0.5),
 pan = 0,
 
 // Could be more human readable to have all the information for each note in its own separate array
-// Oscillator frequencies
-freqs = [root, perfectFifth, root * 2, perfectFifth * 2, septimalMinorThird * 4],
 
-// Duration of each loop
-loopDurs = [330, 300, 300, 300, 200],
+//Score
+// [freq, duration, wait time to start next loop]
 
-// How long to wait until the next loop starts
-waitTimes = [30, 30, 30, 30];
+score = [
+	[root, 330, 30],
+	[perfectFifth, 300, 30],
+	[root * 2, 300, 30],
+	[perfectFifth * 2, 300, 30],
+	[septimalMinorThird * 4, 200, 0]
+];
 
 r = Routine({
-	freqs.do({|freq, c|
-		var loopDur = loopDurs.wrapAt(c),
+	score.do({|note, c|
+		var freq = note[0],
+		loopDur = note[1],
+		waitTime = note[2],
 		pause = rrand(1.0, 5.0),
 		sus = rrand(4.0, 8.0),
 		pan = rrand(-0.5, 0.5),
@@ -93,7 +98,7 @@ r = Routine({
 		).play;
 
 		// wait to start next loop
-		waitTimes.wrapAt(c).wait;
+		waitTime.wait;
 	});
 });
 )
