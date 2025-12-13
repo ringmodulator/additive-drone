@@ -56,16 +56,18 @@ sus = rrand(4.0, 8.0),
 dur = rrand(0.1, 0.5),
 pan = 0,
 
-// Could be more human readable to have all the information for each note in its own separate array
-
 //Score
 // [freq, duration, wait time to start next loop]
 
 score = [
-	[root, 330, 30],
-	[perfectFifth, 300, 30],
-	[root * 2, 300, 30],
-	[perfectFifth * 2, 300, 30],
+	[root, 600, 0],
+	[root, 600, 0],
+	[perfectFifth, 600, 0],
+	[perfectFifth, 600, 0],
+	[root * 2, 600, 0],
+	[root * 2, 600, 0],
+	[perfectFifth * 2, 600, 0],
+	[perfectFifth * 2, 600, 60],
 	[septimalMinorThird * 4, 200, 0]
 ];
 
