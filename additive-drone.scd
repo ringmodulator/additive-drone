@@ -17,8 +17,8 @@ Initial goals for this piece:
 SynthDef(
 	\drone,
 	{
-	arg out = 0, freq = 440, amp = 0.1, pause = 1, sus = 3, pan = 1;
-	var env = Env.new(levels: [0.001, 0.001, 1, 1, 0.001], times: [pause, 4, sus, 4], curve: \sine);
+	| out = 0, freq = 440, amp = 0.1, pause = 1, sus = 3, pan = 1 |
+	var env = Env.new(levels: [0, 0, 1, 1, 0], times: [pause, 4, sus, 4], curve: \sine);
 	// Nice, simple additive synth stolen from Stanford SC "gentle introduction" and modified a bit
 	var snd = Mix.fill(12, {
 			arg counter; // counts iterations starting from zero
@@ -56,22 +56,26 @@ sus = rrand(4.0, 8.0),
 dur = rrand(0.1, 0.5),
 pan = 0,
 
+// Could be more human readable to have all the information for each note in its own separate array
 // Oscillator frequencies
-freqs = [root, septimalMinorThird, perfectFifth],
+freqs = [root, perfectFifth, root * 2, perfectFifth * 2, septimalMinorThird * 4],
 
 // Duration of each loop
-loopDurs = [120, 120, 120],
+loopDurs = [330, 300, 300, 300, 200],
 
 // How long to wait until the next loop starts
-waitTimes = [20, 20, 20];
+waitTimes = [30, 30, 30, 30];
 
 r = Routine({
 	freqs.do({|freq, c|
 		var loopDur = loopDurs.wrapAt(c),
+		pause = rrand(1.0, 5.0),
+		sus = rrand(4.0, 8.0),
+		pan = rrand(-0.5, 0.5),
 		dur = pause + sus + 8,
 		repeats = (loopDur/dur).round;
 
-		("Note" ++ c).postln;
+		("Note " ++ (c + 1)).postln;
 		("Frequency: " ++ freq).postln;
 		("Loop duration: " ++ loopDur).postln;
 		("Note duration: " ++ dur).postln;
