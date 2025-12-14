@@ -60,22 +60,41 @@ pan = 0,
 // [freq, duration, wait time to start next loop]
 
 score = [
-	[root, 600, 0],
-	[root, 600, 0],
-	[perfectFifth, 600, 0],
-	[perfectFifth, 600, 0],
-	[root * 2, 600, 0],
-	[root * 2, 600, 0],
-	[perfectFifth * 2, 600, 0],
-	[perfectFifth * 2, 600, 60],
-	[septimalMinorThird * 4, 200, 0]
+	// Thick root/fifth drone for duration of piece. Octaves introduce gradually.
+	[root, 0.1, 1200, 0],
+	[root, 0.1, 1200, 0],
+	[perfectFifth, 0.1, 1200, 0],
+	[perfectFifth, 0.1, 1200, 60],
+
+	// Second group of root/fifth drones
+	[root * 2, 0.1, 1140, 0],
+	[root * 2, 0.1, 1140, 0],
+	[perfectFifth * 2, 0.1, 1140, 0],
+	[perfectFifth * 2, 0.1, 1140, 60],
+
+	// Second group of root/fifth drones
+	[root * 4, 0.025, 1080, 0],
+	[root * 4, 0.025, 1080, 0],
+	[perfectFifth * 4, 0.025, 1080, 0],
+	[perfectFifth * 4, 0.025, 1080, 60],
+
+	[perfectFourth * 2, 0.1, 200, 0],
+	[perfectFourth * 2, 0.1, 200, 0],
+	[perfectFourth * 4, 0.025, 200, 0],
+	[perfectFourth * 4, 0.025, 200, 150],
+
+	[septimalMinorThird * 2, 0.1, 200, 0],
+	[septimalMinorThird * 2, 0.1, 200, 0],
+	[septimalMinorThird * 4, 0.025, 200, 0],
+	[septimalMinorThird * 4, 0.025, 200, 0],
 ];
 
 r = Routine({
 	score.do({|note, c|
 		var freq = note[0],
-		loopDur = note[1],
-		waitTime = note[2],
+		amp = note[1],
+		loopDur = note[2],
+		waitTime = note[3],
 		pause = rrand(1.0, 5.0),
 		sus = rrand(4.0, 8.0),
 		pan = rrand(-0.5, 0.5),
@@ -84,7 +103,7 @@ r = Routine({
 
 		("Note " ++ (c + 1)).postln;
 		("Frequency: " ++ freq).postln;
-		("Loop duration: " ++ loopDur).postln;
+		("Approximate loop duration: " ++ loopDur).postln;
 		("Note duration: " ++ dur).postln;
 		("Repeats: " ++ repeats).postln;
 		("").postln;
@@ -93,6 +112,7 @@ r = Routine({
 			\instrument, \drone,
 			\out, out,
 			\freq, Pseq([freq], repeats),
+			\amp, amp,
 			\pause, pause,
 			\sus, sus,
 			\dur, dur,
