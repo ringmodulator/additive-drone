@@ -72,21 +72,35 @@ score = [
 	[perfectFifth * 2, 0.1, 1140, 0],
 	[perfectFifth * 2, 0.1, 1140, 60],
 
-	// Second group of root/fifth drones
+	// Third group of root/fifth drones
 	[root * 4, 0.025, 1080, 0],
 	[root * 4, 0.025, 1080, 0],
 	[perfectFifth * 4, 0.025, 1080, 0],
 	[perfectFifth * 4, 0.025, 1080, 60],
 
-	[perfectFourth * 2, 0.1, 200, 0],
-	[perfectFourth * 2, 0.1, 200, 0],
-	[perfectFourth * 4, 0.025, 200, 0],
-	[perfectFourth * 4, 0.025, 200, 150],
+	// Fourth group of root/fifth drones
+	[root * 8, 0.01, 1020, 0],
+	[root * 8, 0.01, 1020, 0],
+	[perfectFifth * 8, 0.01, 1020, 0],
+	[perfectFifth * 8, 0.01, 1020, 60],
 
-	[septimalMinorThird * 2, 0.1, 200, 0],
-	[septimalMinorThird * 2, 0.1, 200, 0],
-	[septimalMinorThird * 4, 0.025, 200, 0],
-	[septimalMinorThird * 4, 0.025, 200, 0],
+	// Major second and perfect fourth
+	[majorSecond * 4, 0.025, 180, 0],
+	[perfectFourth * 4, 0.025, 180, 0],
+	[majorSecond * 8, 0.01, 180, 0],
+	[perfectFourth * 8, 0.01, 180, 60],
+
+	// Suboctave root and fifth
+	[root/2, 0.1, 600, 0],
+	[root/2, 0.1, 600, 0],
+	[perfectFifth/2, 0.1, 600, 0],
+	[perfectFifth/2, 0.1, 600, 60],
+
+	// Septimal minor third and harmonic seventh
+	[septimalMinorThird * 4, 0.025, 180, 0],
+	[minorSeventh * 4, 0.025, 180, 0],
+	[septimalMinorThird * 8, 0.01, 180, 0],
+	[minorSeventh * 8, 0.01, 180, 180],
 ];
 
 r = Routine({
@@ -106,6 +120,7 @@ r = Routine({
 		("Approximate loop duration: " ++ loopDur).postln;
 		("Note duration: " ++ dur).postln;
 		("Repeats: " ++ repeats).postln;
+		("Actual loop duration: " ++ (dur * repeats)).postln;
 		("").postln;
 
 		Pbind(
