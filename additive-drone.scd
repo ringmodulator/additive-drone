@@ -88,19 +88,31 @@ score = [
 	[majorSecond * 4, 0.025, 180, 0],
 	[perfectFourth * 4, 0.025, 180, 0],
 	[majorSecond * 8, 0.01, 180, 0],
-	[perfectFourth * 8, 0.01, 180, 60],
-
-	// Suboctave root and fifth
-	[root/2, 0.1, 600, 0],
-	[root/2, 0.1, 600, 0],
-	[perfectFifth/2, 0.1, 600, 0],
-	[perfectFifth/2, 0.1, 600, 60],
+	[perfectFourth * 8, 0.01, 180, 180],
 
 	// Septimal minor third and harmonic seventh
 	[septimalMinorThird * 4, 0.025, 180, 0],
 	[minorSeventh * 4, 0.025, 180, 0],
 	[septimalMinorThird * 8, 0.01, 180, 0],
 	[minorSeventh * 8, 0.01, 180, 180],
+
+	// Major second and perfect fourth
+	[majorSecond * 4, 0.025, 180, 0],
+	[perfectFourth * 4, 0.025, 180, 0],
+	[majorSecond * 8, 0.01, 180, 0],
+	[perfectFourth * 8, 0.01, 180, 180],
+
+	// Septimal minor third and harmonic seventh
+	[septimalMinorThird * 4, 0.025, 180, 0],
+	[minorSeventh * 4, 0.025, 180, 0],
+	[septimalMinorThird * 8, 0.01, 180, 0],
+	[minorSeventh * 8, 0.01, 180, 180],
+
+	// Very high root/fifth drones
+	[root * 16, 0.005, 240, 0],
+	[root * 16, 0.005, 240, 0],
+	[perfectFifth * 16, 0.005, 240, 0],
+	[perfectFifth * 16, 0.005, 240, 0],
 ];
 
 r = Routine({
