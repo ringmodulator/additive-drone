@@ -58,32 +58,26 @@ pan = 0,
 // [freq, duration, wait time to start next loop]
 
 score = [
-	// Thick root/fifth drone for duration of piece. Octaves introduce gradually.
-	[root, 0.1, 1200, 0],
-	[root, 0.1, 1200, 0],
-	[perfectFifth, 0.1, 1200, 0],
-	[perfectFifth, 0.1, 1200, 60],
-
-	// Second group of root/fifth drones
-	[root * 2, 0.1, 1140, 0],
-	[root * 2, 0.1, 1140, 0],
-	[perfectFifth * 2, 0.1, 1140, 0],
-	[perfectFifth * 2, 0.1, 1140, 60],
-
-	// Third group of root/fifth drones
-	[root * 4, 0.025, 1080, 0],
-	[root * 4, 0.025, 1080, 0],
-	[perfectFifth * 4, 0.025, 1080, 0],
-	[perfectFifth * 4, 0.025, 1080, 60],
-
-	// Fourth group of root/fifth drones
+	// Introduce initial drone quickly for test purposes, other notes start after 15 seconds
+	[root, 0.1, 1020, 0],
+	[root, 0.1, 1020, 0],
+	[perfectFifth, 0.1, 1020, 0],
+	[perfectFifth, 0.1, 1020, 0],
+	[root * 2, 0.1, 1020, 0],
+	[root * 2, 0.1, 1020, 0],
+	[perfectFifth * 2, 0.1, 1020, 0],
+	[perfectFifth * 2, 0.1, 1020, 0],
+	[root * 4, 0.025, 1020, 0],
+	[root * 4, 0.025, 1020, 0],
+	[perfectFifth * 4, 0.025, 1020, 0],
+	[perfectFifth * 4, 0.025, 1020, 0],
 	[root * 8, 0.01, 1020, 0],
 	[root * 8, 0.01, 1020, 0],
 	[perfectFifth * 8, 0.01, 1020, 0],
-	[perfectFifth * 8, 0.01, 1020, 60],
+	[perfectFifth * 8, 0.01, 1020, 15],
 
 	// Introduce notes in chord, then rotate through octaves.
-	// Round 1
+
 	// Septimal minor third
 	[septimalMinorThird * 2, 0.1, 180, 0],
 	[septimalMinorThird * 2, 0.1, 180, 60],
@@ -97,7 +91,6 @@ score = [
 	[minorSeventh * 8, 0.01, 180, 60],
 
 
-    // Round 2
 	// Septimal minor third
 	[septimalMinorThird * 4, 0.025, 180, 0],
 	[septimalMinorThird * 4, 0.025, 180, 60],
@@ -110,8 +103,6 @@ score = [
 	[minorSeventh * 2, 0.1, 180, 0],
 	[minorSeventh * 2, 0.1, 180, 60],
 
-
-	// Round 3
 	// Septimal minor third
 	[septimalMinorThird * 8, 0.01, 180, 0],
 	[septimalMinorThird * 8, 0.01, 180, 60],
@@ -123,20 +114,6 @@ score = [
 	// Minor seventh
 	[minorSeventh * 4, 0.025, 180, 0],
 	[minorSeventh * 4, 0.025, 180, 60],
-
-	// Round 4 (repeat first)
-	// Septimal minor third
-	[septimalMinorThird * 2, 0.1, 180, 0],
-	[septimalMinorThird * 2, 0.1, 180, 60],
-
-	// Perfect fourth
-	[perfectFourth * 4, 0.025, 180, 0],
-	[perfectFourth * 4, 0.025, 180, 60],
-
-	// Minor seventh
-	[minorSeventh * 8, 0.01, 180, 0],
-	[minorSeventh * 8, 0.01, 180, 60],
-
 
 	// Very high root/fifth drones
 	[root * 16, 0.005, 240, 0],
