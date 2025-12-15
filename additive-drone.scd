@@ -85,57 +85,57 @@ score = [
 	// Introduce notes in chord, then rotate through octaves.
 	// Round 1
 	// Septimal minor third
-	[septimalMinorThird * 2, 0.1, 180, 0],
-	[septimalMinorThird * 2, 0.1, 180, 60],
+	[septimalMinorThird * 2, 0.05, 180, 0],
+	[septimalMinorThird * 2, 0.05, 180, 60],
 
 	// Perfect fourth
-	[perfectFourth * 4, 0.025, 180, 0],
-	[perfectFourth * 4, 0.025, 180, 60],
+	[perfectFourth * 4, 0.01, 180, 0],
+	[perfectFourth * 4, 0.01, 180, 60],
 
 	// Minor seventh
-	[minorSeventh * 8, 0.01, 180, 0],
-	[minorSeventh * 8, 0.01, 180, 60],
+	[minorSeventh * 8, 0.005, 180, 0],
+	[minorSeventh * 8, 0.005, 180, 60],
 
 
     // Round 2
 	// Septimal minor third
-	[septimalMinorThird * 4, 0.025, 180, 0],
-	[septimalMinorThird * 4, 0.025, 180, 60],
+	[septimalMinorThird * 4, 0.01, 180, 0],
+	[septimalMinorThird * 4, 0.01, 180, 60],
 
 	// Perfect fourth
-	[perfectFourth * 8, 0.01, 180, 0],
-	[perfectFourth * 8, 0.01, 180, 60],
+	[perfectFourth * 8, 0.005, 180, 0],
+	[perfectFourth * 8, 0.005, 180, 60],
 
 	// Minor seventh
-	[minorSeventh * 2, 0.1, 180, 0],
-	[minorSeventh * 2, 0.1, 180, 60],
+	[minorSeventh * 2, 0.05, 180, 0],
+	[minorSeventh * 2, 0.05, 180, 60],
 
 
 	// Round 3
 	// Septimal minor third
-	[septimalMinorThird * 8, 0.01, 180, 0],
-	[septimalMinorThird * 8, 0.01, 180, 60],
+	[septimalMinorThird * 8, 0.005, 180, 0],
+	[septimalMinorThird * 8, 0.005, 180, 60],
 
 	// Perfect fourth
-	[perfectFourth * 2, 0.1, 180, 0],
-	[perfectFourth * 2, 0.1, 180, 60],
+	[perfectFourth * 2, 0.05, 180, 0],
+	[perfectFourth * 2, 0.05, 180, 60],
 
 	// Minor seventh
-	[minorSeventh * 4, 0.025, 180, 0],
-	[minorSeventh * 4, 0.025, 180, 60],
+	[minorSeventh * 4, 0.01, 180, 0],
+	[minorSeventh * 4, 0.01, 180, 60],
 
 	// Round 4 (repeat first)
 	// Septimal minor third
-	[septimalMinorThird * 2, 0.1, 180, 0],
-	[septimalMinorThird * 2, 0.1, 180, 60],
+	[septimalMinorThird * 2, 0.05, 180, 0],
+	[septimalMinorThird * 2, 0.05, 180, 60],
 
 	// Perfect fourth
-	[perfectFourth * 4, 0.025, 180, 0],
-	[perfectFourth * 4, 0.025, 180, 60],
+	[perfectFourth * 4, 0.01, 180, 0],
+	[perfectFourth * 4, 0.01, 180, 60],
 
 	// Minor seventh
-	[minorSeventh * 8, 0.01, 180, 0],
-	[minorSeventh * 8, 0.01, 180, 60],
+	[minorSeventh * 8, 0.005, 180, 0],
+	[minorSeventh * 8, 0.005, 180, 60],
 
 
 	// Very high root/fifth drones
