@@ -82,29 +82,37 @@ score = [
 	[perfectFifth * 8, 0.01, 1020, 0],
 	[perfectFifth * 8, 0.01, 1020, 60],
 
-	// Major second and perfect fourth
-	[majorSecond * 4, 0.025, 180, 0],
+	// Perfect Fourth
 	[perfectFourth * 4, 0.025, 180, 0],
-	[majorSecond * 8, 0.01, 180, 0],
-	[perfectFourth * 8, 0.01, 180, 180],
+	[perfectFourth * 8, 0.01, 180, 90],
 
-	// Septimal minor third and harmonic seventh
-	[septimalMinorThird * 4, 0.025, 180, 0],
-	[minorSeventh * 4, 0.025, 180, 0],
-	[septimalMinorThird * 8, 0.01, 180, 0],
-	[minorSeventh * 8, 0.01, 180, 180],
-
-	// Major second and perfect fourth
+	// Major second
 	[majorSecond * 4, 0.025, 180, 0],
-	[perfectFourth * 4, 0.025, 180, 0],
-	[majorSecond * 8, 0.01, 180, 0],
-	[perfectFourth * 8, 0.01, 180, 180],
+	[majorSecond * 8, 0.01, 180, 90],
 
-	// Septimal minor third and harmonic seventh
-	[septimalMinorThird * 4, 0.025, 180, 0],
+	// Minor seventh
 	[minorSeventh * 4, 0.025, 180, 0],
-	[septimalMinorThird * 8, 0.01, 180, 0],
-	[minorSeventh * 8, 0.01, 180, 180],
+	[minorSeventh * 8, 0.01, 180, 90],
+
+	// Septimal minor third
+	[septimalMinorThird * 4, 0.025, 180, 0],
+	[septimalMinorThird * 8, 0.01, 180, 90],
+
+	// Perfect Fourth
+	[perfectFourth * 4, 0.025, 180, 0],
+	[perfectFourth * 8, 0.01, 180, 90],
+
+	// Major second
+	[majorSecond * 4, 0.025, 180, 0],
+	[majorSecond * 8, 0.01, 180, 90],
+
+	// Minor seventh
+	[minorSeventh * 4, 0.025, 180, 0],
+	[minorSeventh * 8, 0.01, 180, 90],
+
+	// Septimal minor third
+	[septimalMinorThird * 4, 0.025, 180, 0],
+	[septimalMinorThird * 8, 0.01, 180, 90],
 
 	// Very high root/fifth drones
 	[root * 16, 0.005, 240, 0],
