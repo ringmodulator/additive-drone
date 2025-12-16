@@ -1,3 +1,5 @@
+Server.default.options.numInputBusChannels = 0; // For use with AirPlay
+
 s.boot;
 
 /*
@@ -12,13 +14,13 @@ Initial goals for this piece:
 (
 // Drone instrument
 // Plays a note at a given frequency
-// Envelope has initial silent pause, 4 second attack, parameterized sustain time, 4 second fade.
+// Envelope has initial silent pause, 4 second attack, parameterized sustain time, 8 second fade.
 
 SynthDef(
 	\drone,
 	{
 	| out = 0, freq = 440, amp = 0.1, pause = 1, sus = 3, pan = 1 |
-	var env = Env.new(levels: [0, 0, 1, 1, 0], times: [pause, 4, sus, 4], curve: \sine);
+	var env = Env.new(levels: [0, 0, 1, 1, 0], times: [pause, 4, sus, 8], curve: \sine);
 	// Nice, simple additive synth stolen from Stanford SC "gentle introduction" and modified a bit
 	var snd = Mix.fill(12, {
 			arg counter; // counts iterations starting from zero
@@ -155,7 +157,7 @@ r = Routine({
 		pause = rrand(1.0, 5.0),
 		sus = rrand(4.0, 8.0),
 		pan = rrand(-0.5, 0.5),
-		dur = pause + sus + 8,
+		dur = pause + sus + 12,
 		repeats = (loopDur/dur).round;
 
 		("Note " ++ (c + 1)).postln;

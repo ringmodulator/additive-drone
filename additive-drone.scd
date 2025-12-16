@@ -1,3 +1,5 @@
+Server.default.options.numInputBusChannels = 0; // For use with AirPlay
+
 s.boot;
 
 /*
@@ -82,7 +84,8 @@ score = [
 	[perfectFifth * 8, 0.01, 1020, 0],
 	[perfectFifth * 8, 0.01, 1020, 60],
 
-	// Introduce notes in chord, then rotate through octaves.
+	// Introduce notes in chord, then rotate through octaves. This version switches between minor and major thirds and sevenths
+
 	// Round 1
 	// Septimal minor third
 	[septimalMinorThird * 2, 0.05, 180, 0],
@@ -98,17 +101,17 @@ score = [
 
 
     // Round 2
-	// Septimal minor third
-	[septimalMinorThird * 4, 0.01, 180, 0],
-	[septimalMinorThird * 4, 0.01, 180, 60],
+	// Major third
+	[majorThird * 4, 0.01, 180, 0],
+	[majorThird * 4, 0.01, 180, 60],
 
 	// Perfect fourth
 	[perfectFourth * 8, 0.005, 180, 0],
 	[perfectFourth * 8, 0.005, 180, 60],
 
-	// Minor seventh
-	[minorSeventh * 2, 0.05, 180, 0],
-	[minorSeventh * 2, 0.05, 180, 60],
+	// Major seventh
+	[majorSeventh * 2, 0.05, 180, 0],
+	[majorSeventh * 2, 0.05, 180, 60],
 
 
 	// Round 3
@@ -125,18 +128,18 @@ score = [
 	[minorSeventh * 4, 0.01, 180, 60],
 
 
-	// Round 4 (repeat first)
-	// Septimal minor third
-	[septimalMinorThird * 2, 0.05, 180, 0],
-	[septimalMinorThird * 2, 0.05, 180, 60],
+	// Round 4
+	// Major third
+	[majorThird * 2, 0.05, 180, 0],
+	[majorThird * 2, 0.05, 180, 60],
 
 	// Perfect fourth
 	[perfectFourth * 4, 0.01, 180, 0],
 	[perfectFourth * 4, 0.01, 180, 60],
 
-	// Minor seventh
-	[minorSeventh * 8, 0.005, 180, 0],
-	[minorSeventh * 8, 0.005, 180, 60],
+	// Major seventh
+	[majorSeventh * 8, 0.005, 180, 0],
+	[majorSeventh * 8, 0.005, 180, 60],
 
 
 	// Ending: very high root/fifth drones
