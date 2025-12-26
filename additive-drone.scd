@@ -61,92 +61,80 @@ pan = 0,
 
 score = [
 	// Thick root/fifth drone for duration of piece. Octaves introduce gradually.
-	[root, 0.1, 1200, 0],
-	[root, 0.1, 1200, 0],
-	[perfectFifth, 0.1, 1200, 0],
-	[perfectFifth, 0.1, 1200, 60],
+	[root, 0.1, 1200, 0, "root"],
+	[root, 0.1, 1200, 0, "root"],
+	[perfectFifth, 0.1, 1200, 0, "fifth"],
+	[perfectFifth, 0.1, 1200, 60, "fifth"],
 
 	// Second group of root/fifth drones
-	[root * 2, 0.1, 1140, 0],
-	[root * 2, 0.1, 1140, 0],
-	[perfectFifth * 2, 0.1, 1140, 0],
-	[perfectFifth * 2, 0.1, 1140, 60],
+	[root * 2, 0.1, 1140, 0, "root"],
+	[root * 2, 0.1, 1140, 0, "root"],
+	[perfectFifth * 2, 0.1, 1140, 0, "fifth"],
+	[perfectFifth * 2, 0.1, 1140, 60, "fifth"],
 
 	// Third group of root/fifth drones
-	[root * 4, 0.025, 1080, 0],
-	[root * 4, 0.025, 1080, 0],
-	[perfectFifth * 4, 0.025, 1080, 0],
-	[perfectFifth * 4, 0.025, 1080, 60],
+	[root * 4, 0.025, 1080, 0, "root"],
+	[root * 4, 0.025, 1080, 0, "root"],
+	[perfectFifth * 4, 0.025, 1080, 0, "fifth"],
+	[perfectFifth * 4, 0.025, 1080, 60, "fifth"],
 
 	// Fourth group of root/fifth drones
-	[root * 8, 0.01, 1020, 0],
-	[root * 8, 0.01, 1020, 0],
-	[perfectFifth * 8, 0.01, 1020, 0],
-	[perfectFifth * 8, 0.01, 1020, 60],
+	[root * 8, 0.01, 1020, 0, "root"],
+	[root * 8, 0.01, 1020, 0, "root"],
+	[perfectFifth * 8, 0.01, 1020, 0, "fifth"],
+	[perfectFifth * 8, 0.01, 1020, 60, "fifth"],
 
 	// Introduce notes in chord, then rotate through octaves. This version switches between minor and major thirds and sevenths
 
 	// Round 1
-	// Septimal minor third
-	[septimalMinorThird * 2, 0.05, 180, 0],
-	[septimalMinorThird * 2, 0.05, 180, 60],
+	[septimalMinorThird * 2, 0.05, 180, 0, "minor third"],
+	[septimalMinorThird * 2, 0.05, 180, 60, "minor third"],
 
-	// Perfect fourth
-	[perfectFourth * 4, 0.01, 180, 0],
-	[perfectFourth * 4, 0.01, 180, 60],
+	[perfectFourth * 4, 0.01, 180, 0, "fourth"],
+	[perfectFourth * 4, 0.01, 180, 60, "fourth"],
 
-	// Minor seventh
-	[minorSeventh * 8, 0.005, 180, 0],
-	[minorSeventh * 8, 0.005, 180, 60],
+	[minorSeventh * 8, 0.005, 180, 0, "minor seventh"],
+	[minorSeventh * 8, 0.005, 180, 60, "minor seventh"],
 
 
     // Round 2
-	// Major third
-	[majorThird * 4, 0.01, 180, 0],
-	[majorThird * 4, 0.01, 180, 60],
+	[majorThird * 4, 0.01, 180, 0, "Major third"],
+	[majorThird * 4, 0.01, 180, 60, "Major third"],
 
-	// Perfect fourth
-	[perfectFourth * 8, 0.005, 180, 0],
-	[perfectFourth * 8, 0.005, 180, 60],
+	[perfectFourth * 8, 0.005, 180, 0, "fourth"],
+	[perfectFourth * 8, 0.005, 180, 60, "fourth"],
 
-	// Major seventh
-	[majorSeventh * 2, 0.05, 180, 0],
-	[majorSeventh * 2, 0.05, 180, 60],
+	[majorSeventh * 2, 0.05, 180, 0, "Major seventh"],
+	[majorSeventh * 2, 0.05, 180, 60, "Major seventh"],
 
 
 	// Round 3
-	// Septimal minor third
-	[septimalMinorThird * 8, 0.005, 180, 0],
-	[septimalMinorThird * 8, 0.005, 180, 60],
+	[septimalMinorThird * 8, 0.005, 180, 0, "minor third"],
+	[septimalMinorThird * 8, 0.005, 180, 60, "minor third"],
 
-	// Perfect fourth
-	[perfectFourth * 2, 0.05, 180, 0],
-	[perfectFourth * 2, 0.05, 180, 60],
+	[perfectFourth * 2, 0.05, 180, 0, "fourth"],
+	[perfectFourth * 2, 0.05, 180, 60, "fourth"],
 
-	// Minor seventh
-	[minorSeventh * 4, 0.01, 180, 0],
-	[minorSeventh * 4, 0.01, 180, 60],
+	[minorSeventh * 4, 0.01, 180, 0, "minor seventh"],
+	[minorSeventh * 4, 0.01, 180, 60, "minor seventh"],
 
 
 	// Round 4
-	// Major third
-	[majorThird * 2, 0.05, 180, 0],
-	[majorThird * 2, 0.05, 180, 60],
+	[majorThird * 2, 0.05, 180, 0, "Major third"],
+	[majorThird * 2, 0.05, 180, 60, "Major third"],
 
-	// Perfect fourth
-	[perfectFourth * 4, 0.01, 180, 0],
-	[perfectFourth * 4, 0.01, 180, 60],
+	[perfectFourth * 4, 0.01, 180, 0, "fourth"],
+	[perfectFourth * 4, 0.01, 180, 60, "fourth"],
 
-	// Major seventh
-	[majorSeventh * 8, 0.005, 180, 0],
-	[majorSeventh * 8, 0.005, 180, 60],
+	[majorSeventh * 8, 0.005, 180, 0, "Major seventh"],
+	[majorSeventh * 8, 0.005, 180, 60, "Major seventh"],
 
 
 	// Ending: very high root/fifth drones
-	[root * 16, 0.005, 240, 0],
-	[root * 16, 0.005, 240, 0],
-	[perfectFifth * 16, 0.005, 240, 0],
-	[perfectFifth * 16, 0.005, 240, 0],
+	[root * 16, 0.005, 240, 0, "root"],
+	[root * 16, 0.005, 240, 0, "root"],
+	[perfectFifth * 16, 0.005, 240, 0, "fifth"],
+	[perfectFifth * 16, 0.005, 240, 0, "fifth"],
 ];
 
 r = Routine({
@@ -155,13 +143,14 @@ r = Routine({
 		amp = note[1],
 		loopDur = note[2],
 		waitTime = note[3],
+		message = note[4],
 		pause = rrand(1.0, 5.0),
 		sus = rrand(4.0, 8.0),
 		pan = rrand(-0.5, 0.5),
 		dur = pause + sus + 12,
 		repeats = (loopDur/dur).round;
 
-		("Note " ++ (c + 1)).postln;
+		("Note " ++ (c + 1) ++ ": "  ++ message).postln;
 		("Frequency: " ++ freq).postln;
 		("Approximate loop duration: " ++ loopDur).postln;
 		("Note duration: " ++ dur).postln;
