@@ -38,23 +38,17 @@ SynthDef(
 var root = 65.41, // Low C
 minorSecond = root * (15/14),
 majorSecond = root * (8/7),
-septimalMinorThird = root * (7/6), // tune minor third in logic to this
+septimalMinorThird = root * (7/6),
 minorThird = root * (6/5),
 majorThird = root * (5/4),
 perfectFourth = root * (4/3),
-augmentedFourth = root * (7/5), // Logic piano is tuned to this tritone, not 10/7
+augmentedFourth = root * (7/5),
 diminishedFifth = root * (10/7),
 perfectFifth = root * (3/2),
 minorSixth = root * (8/5),
 majorSixth = root * (5/3),
 minorSeventh = root * (7/4),
 majorSeventh = root * (15/8),
-out = 0,
-freq = 880,
-pause = rrand(1.0, 5.0),
-sus = rrand(4.0, 8.0),
-dur = rrand(0.1, 0.5),
-pan = 0,
 
 //Score
 // [freq, duration, wait time to start next loop]
@@ -144,6 +138,7 @@ r = Routine({
 		loopDur = note[2],
 		waitTime = note[3],
 		message = note[4],
+		out = 0,
 		pause = rrand(1.0, 5.0),
 		sus = rrand(4.0, 8.0),
 		pan = rrand(-0.5, 0.5),
