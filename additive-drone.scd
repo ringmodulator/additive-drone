@@ -51,7 +51,7 @@ minorSeventh = root * (7/4),
 majorSeventh = root * (15/8),
 
 // Set duration of piece in minutes and calculate total seconds and basic time unit (scaledMinute) of 1/20 of piece length.
-minutes = 10,
+minutes = 20,
 seconds = minutes * 60,
 scaledMinute = seconds/20,
 
