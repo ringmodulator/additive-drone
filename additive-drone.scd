@@ -51,7 +51,7 @@ minorSeventh = root * (7/4),
 majorSeventh = root * (15/8),
 
 // Set duration of piece in minutes and calculate total seconds and basic time unit (scaledMinute) of 1/20 of piece length.
-minutes = 20,
+minutes = 5,
 seconds = minutes * 60,
 scaledMinute = seconds/20,
 
@@ -86,44 +86,44 @@ score = [
 	// Introduce notes in chord, then rotate through octaves. This version switches between minor and major thirds and sevenths
 
 	// Round 1
-	[septimalMinorThird * 2, 0.05, scaledMinute * 3, 0, "minor third"],
-	[septimalMinorThird * 2, 0.05, scaledMinute * 3, scaledMinute, "minor third"],
+	[perfectFourth * 2, 0.05, scaledMinute * 3, 0, "fourth"],
+	[perfectFourth * 2, 0.05, scaledMinute * 3, scaledMinute, "fourth"],
 
-	[perfectFourth * 4, 0.01, scaledMinute * 3, 0, "fourth"],
-	[perfectFourth * 4, 0.01, scaledMinute * 3, scaledMinute, "fourth"],
+	[septimalMinorThird * 4, 0.01, scaledMinute * 3, 0, "minor third"],
+	[septimalMinorThird * 4, 0.01, scaledMinute * 3, scaledMinute, "minor third"],
 
 	[minorSeventh * 8, 0.005, scaledMinute * 3, 0, "minor seventh"],
 	[minorSeventh * 8, 0.005, scaledMinute * 3, scaledMinute, "minor seventh"],
 
 
     // Round 2
-	[majorThird * 4, 0.01, scaledMinute * 3, 0, "Major third"],
-	[majorThird * 4, 0.01, scaledMinute * 3, scaledMinute, "Major third"],
+	[perfectFourth * 4, 0.01, scaledMinute * 3, 0, "fourth"],
+	[perfectFourth * 4, 0.01, scaledMinute * 3, scaledMinute, "fourth"],
 
-	[perfectFourth * 8, 0.005, scaledMinute * 3, 0, "fourth"],
-	[perfectFourth * 8, 0.005, scaledMinute * 3, scaledMinute, "fourth"],
+	[majorThird * 8, 0.005, scaledMinute * 3, 0, "Major third"],
+	[majorThird * 8, 0.005, scaledMinute * 3, scaledMinute, "Major third"],
 
 	[majorSeventh * 2, 0.05, scaledMinute * 3, 0, "Major seventh"],
 	[majorSeventh * 2, 0.05, scaledMinute * 3, scaledMinute, "Major seventh"],
 
 
 	// Round 3
-	[septimalMinorThird * 8, 0.005, scaledMinute * 3, 0, "minor third"],
-	[septimalMinorThird * 8, 0.005, scaledMinute * 3, scaledMinute, "minor third"],
+	[perfectFourth * 8, 0.005, scaledMinute * 3, 0, "fourth"],
+	[perfectFourth * 8, 0.005, scaledMinute * 3, scaledMinute, "fourth"],
 
-	[perfectFourth * 2, 0.05, scaledMinute * 3, 0, "fourth"],
-	[perfectFourth * 2, 0.05, scaledMinute * 3, scaledMinute, "fourth"],
+	[septimalMinorThird * 2, 0.05, scaledMinute * 3, 0, "minor third"],
+	[septimalMinorThird * 2, 0.05, scaledMinute * 3, scaledMinute, "minor third"],
 
 	[minorSeventh * 4, 0.01, scaledMinute * 3, 0, "minor seventh"],
 	[minorSeventh * 4, 0.01, scaledMinute * 3, scaledMinute, "minor seventh"],
 
 
 	// Round 4
-	[majorThird * 2, 0.05, scaledMinute * 3, 0, "Major third"],
-	[majorThird * 2, 0.05, scaledMinute * 3, scaledMinute, "Major third"],
+	[perfectFourth * 2, 0.05, scaledMinute * 3, 0, "fourth"],
+	[perfectFourth * 2, 0.05, scaledMinute * 3, scaledMinute, "fourth"],
 
-	[perfectFourth * 4, 0.01, scaledMinute * 3, 0, "fourth"],
-	[perfectFourth * 4, 0.01, scaledMinute * 3, scaledMinute, "fourth"],
+	[majorThird * 4, 0.01, scaledMinute * 3, 0, "Major third"],
+	[majorThird * 4, 0.01, scaledMinute * 3, scaledMinute, "Major third"],
 
 	[majorSeventh * 8, 0.005, scaledMinute * 3, 0, "Major seventh"],
 	[majorSeventh * 8, 0.005, scaledMinute * 3, scaledMinute, "Major seventh"],
