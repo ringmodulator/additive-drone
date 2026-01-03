@@ -50,85 +50,90 @@ majorSixth = root * (5/3),
 minorSeventh = root * (7/4),
 majorSeventh = root * (15/8),
 
+// Set duration of piece in minutes and calculate total seconds and basic time unit (scaledMinute) of 1/20 of piece length.
+minutes = 10,
+seconds = minutes * 60,
+scaledMinute = seconds/20,
+
 //Score
 // [freq, duration, wait time to start next loop]
 
 score = [
 	// Thick root/fifth drone for duration of piece. Octaves introduce gradually.
-	[root, 0.1, 1200, 0, "root"],
-	[root, 0.1, 1200, 0, "root"],
-	[perfectFifth, 0.1, 1200, 0, "fifth"],
-	[perfectFifth, 0.1, 1200, 60, "fifth"],
+	[root, 0.1, seconds, 0, "root"],
+	[root, 0.1, seconds, 0, "root"],
+	[perfectFifth, 0.1, seconds, 0, "fifth"],
+	[perfectFifth, 0.1, seconds, 60, "fifth"],
 
 	// Second group of root/fifth drones
-	[root * 2, 0.1, 1140, 0, "root"],
-	[root * 2, 0.1, 1140, 0, "root"],
-	[perfectFifth * 2, 0.1, 1140, 0, "fifth"],
-	[perfectFifth * 2, 0.1, 1140, 60, "fifth"],
+	[root * 2, 0.1, seconds - scaledMinute, 0, "root"],
+	[root * 2, 0.1, seconds - scaledMinute, 0, "root"],
+	[perfectFifth * 2, 0.1, seconds - scaledMinute, 0, "fifth"],
+	[perfectFifth * 2, 0.1, seconds - scaledMinute, scaledMinute, "fifth"],
 
 	// Third group of root/fifth drones
-	[root * 4, 0.025, 1080, 0, "root"],
-	[root * 4, 0.025, 1080, 0, "root"],
-	[perfectFifth * 4, 0.025, 1080, 0, "fifth"],
-	[perfectFifth * 4, 0.025, 1080, 60, "fifth"],
+	[root * 4, 0.025, seconds - (scaledMinute * 2), 0, "root"],
+	[root * 4, 0.025, seconds - (scaledMinute * 2), 0, "root"],
+	[perfectFifth * 4, 0.025, seconds - (scaledMinute * 2), 0, "fifth"],
+	[perfectFifth * 4, 0.025, seconds - (scaledMinute * 2), scaledMinute, "fifth"],
 
 	// Fourth group of root/fifth drones
-	[root * 8, 0.01, 1020, 0, "root"],
-	[root * 8, 0.01, 1020, 0, "root"],
-	[perfectFifth * 8, 0.01, 1020, 0, "fifth"],
-	[perfectFifth * 8, 0.01, 1020, 60, "fifth"],
+	[root * 8, 0.01, seconds - (scaledMinute * 3), 0, "root"],
+	[root * 8, 0.01, seconds - (scaledMinute * 3), 0, "root"],
+	[perfectFifth * 8, 0.01, seconds - (scaledMinute * 3), 0, "fifth"],
+	[perfectFifth * 8, 0.01, seconds - (scaledMinute * 3), scaledMinute, "fifth"],
 
 	// Introduce notes in chord, then rotate through octaves. This version switches between minor and major thirds and sevenths
 
 	// Round 1
-	[septimalMinorThird * 2, 0.05, 180, 0, "minor third"],
-	[septimalMinorThird * 2, 0.05, 180, 60, "minor third"],
+	[septimalMinorThird * 2, 0.05, scaledMinute * 3, 0, "minor third"],
+	[septimalMinorThird * 2, 0.05, scaledMinute * 3, scaledMinute, "minor third"],
 
-	[perfectFourth * 4, 0.01, 180, 0, "fourth"],
-	[perfectFourth * 4, 0.01, 180, 60, "fourth"],
+	[perfectFourth * 4, 0.01, scaledMinute * 3, 0, "fourth"],
+	[perfectFourth * 4, 0.01, scaledMinute * 3, scaledMinute, "fourth"],
 
-	[minorSeventh * 8, 0.005, 180, 0, "minor seventh"],
-	[minorSeventh * 8, 0.005, 180, 60, "minor seventh"],
+	[minorSeventh * 8, 0.005, scaledMinute * 3, 0, "minor seventh"],
+	[minorSeventh * 8, 0.005, scaledMinute * 3, scaledMinute, "minor seventh"],
 
 
     // Round 2
-	[majorThird * 4, 0.01, 180, 0, "Major third"],
-	[majorThird * 4, 0.01, 180, 60, "Major third"],
+	[majorThird * 4, 0.01, scaledMinute * 3, 0, "Major third"],
+	[majorThird * 4, 0.01, scaledMinute * 3, scaledMinute, "Major third"],
 
-	[perfectFourth * 8, 0.005, 180, 0, "fourth"],
-	[perfectFourth * 8, 0.005, 180, 60, "fourth"],
+	[perfectFourth * 8, 0.005, scaledMinute * 3, 0, "fourth"],
+	[perfectFourth * 8, 0.005, scaledMinute * 3, scaledMinute, "fourth"],
 
-	[majorSeventh * 2, 0.05, 180, 0, "Major seventh"],
-	[majorSeventh * 2, 0.05, 180, 60, "Major seventh"],
+	[majorSeventh * 2, 0.05, scaledMinute * 3, 0, "Major seventh"],
+	[majorSeventh * 2, 0.05, scaledMinute * 3, scaledMinute, "Major seventh"],
 
 
 	// Round 3
-	[septimalMinorThird * 8, 0.005, 180, 0, "minor third"],
-	[septimalMinorThird * 8, 0.005, 180, 60, "minor third"],
+	[septimalMinorThird * 8, 0.005, scaledMinute * 3, 0, "minor third"],
+	[septimalMinorThird * 8, 0.005, scaledMinute * 3, scaledMinute, "minor third"],
 
-	[perfectFourth * 2, 0.05, 180, 0, "fourth"],
-	[perfectFourth * 2, 0.05, 180, 60, "fourth"],
+	[perfectFourth * 2, 0.05, scaledMinute * 3, 0, "fourth"],
+	[perfectFourth * 2, 0.05, scaledMinute * 3, scaledMinute, "fourth"],
 
-	[minorSeventh * 4, 0.01, 180, 0, "minor seventh"],
-	[minorSeventh * 4, 0.01, 180, 60, "minor seventh"],
+	[minorSeventh * 4, 0.01, scaledMinute * 3, 0, "minor seventh"],
+	[minorSeventh * 4, 0.01, scaledMinute * 3, scaledMinute, "minor seventh"],
 
 
 	// Round 4
-	[majorThird * 2, 0.05, 180, 0, "Major third"],
-	[majorThird * 2, 0.05, 180, 60, "Major third"],
+	[majorThird * 2, 0.05, scaledMinute * 3, 0, "Major third"],
+	[majorThird * 2, 0.05, scaledMinute * 3, scaledMinute, "Major third"],
 
-	[perfectFourth * 4, 0.01, 180, 0, "fourth"],
-	[perfectFourth * 4, 0.01, 180, 60, "fourth"],
+	[perfectFourth * 4, 0.01, scaledMinute * 3, 0, "fourth"],
+	[perfectFourth * 4, 0.01, scaledMinute * 3, scaledMinute, "fourth"],
 
-	[majorSeventh * 8, 0.005, 180, 0, "Major seventh"],
-	[majorSeventh * 8, 0.005, 180, 60, "Major seventh"],
+	[majorSeventh * 8, 0.005, scaledMinute * 3, 0, "Major seventh"],
+	[majorSeventh * 8, 0.005, scaledMinute * 3, scaledMinute, "Major seventh"],
 
 
 	// Ending: very high root/fifth drones
-	[root * 16, 0.005, 240, 0, "root"],
-	[root * 16, 0.005, 240, 0, "root"],
-	[perfectFifth * 16, 0.005, 240, 0, "fifth"],
-	[perfectFifth * 16, 0.005, 240, 0, "fifth"],
+	[root * 16, 0.005, scaledMinute * 4, 0, "root"],
+	[root * 16, 0.005, scaledMinute * 4, 0, "root"],
+	[perfectFifth * 16, scaledMinute * 4, 240, 0, "fifth"],
+	[perfectFifth * 16, scaledMinute * 4, 240, 0, "fifth"],
 ];
 
 r = Routine({
