@@ -51,7 +51,7 @@ minorSeventh = root * (7/4),
 majorSeventh = root * (15/8),
 
 // Set duration of piece in minutes and calculate total seconds and basic time unit (scaledMinute) of 1/20 of piece length.
-minutes = 5,
+minutes = 20,
 seconds = minutes * 60,
 scaledMinute = seconds/20,
 
@@ -132,8 +132,8 @@ score = [
 	// Ending: very high root/fifth drones
 	[root * 16, 0.005, scaledMinute * 4, 0, "root"],
 	[root * 16, 0.005, scaledMinute * 4, 0, "root"],
-	[perfectFifth * 16, scaledMinute * 4, 240, 0, "fifth"],
-	[perfectFifth * 16, scaledMinute * 4, 240, 0, "fifth"],
+	[perfectFifth * 16, 0.05, scaledMinute * 4, 240, 0, "fifth"],
+	[perfectFifth * 16, 0.05, scaledMinute * 4, 240, 0, "fifth"],
 ];
 
 r = Routine({
