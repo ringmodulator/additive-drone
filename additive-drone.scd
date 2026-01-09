@@ -9,6 +9,12 @@ Initial goals for this piece:
 - Piece will be made up of loops that fall out of alignment because the pause and sustain segments are randomized.
 - There will be a "score" that says when each loop starts and ends and specifies frequency and any other parameters.
 - Piece will use the same tuning system as "7 limit drone".
+
+Next goals:
+
+- Add an overall volume envelope so that the piece fades out instead of the last loop just ending
+- Add an output bus with filtering and/or other effects.
+
 */
 
 (
@@ -50,8 +56,9 @@ majorSixth = root * (5/3),
 minorSeventh = root * (7/4),
 majorSeventh = root * (15/8),
 
-// Set duration of piece in minutes and calculate total seconds and basic time unit (scaledMinute) of 1/20 of piece length.
-minutes = 20,
+// Set duration of piece in minutes and calculate total seconds and basic time unit (scaledMinute) of 1/20 of piece length. (The piece was originally 20 minutes long and scaledMinute that minute scaled to an arbitrary length.)
+
+minutes = 60,
 seconds = minutes * 60,
 scaledMinute = seconds/20,
 
@@ -132,8 +139,8 @@ score = [
 	// Ending: very high root/fifth drones
 	[root * 16, 0.005, scaledMinute * 4, 0, "root"],
 	[root * 16, 0.005, scaledMinute * 4, 0, "root"],
-	[perfectFifth * 16, 0.05, scaledMinute * 4, 240, 0, "fifth"],
-	[perfectFifth * 16, 0.05, scaledMinute * 4, 240, 0, "fifth"],
+	[perfectFifth * 16, 0.05, scaledMinute * 4, 0, "fifth"],
+	[perfectFifth * 16, 0.05, scaledMinute * 4, 0, "fifth"],
 ];
 
 r = Routine({
