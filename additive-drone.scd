@@ -139,8 +139,8 @@ score = [
 	// Ending: very high root/fifth drones
 	[root * 16, 0.005, scaledMinute * 4, 0, "root"],
 	[root * 16, 0.005, scaledMinute * 4, 0, "root"],
-	[perfectFifth * 16, 0.05, scaledMinute * 4, 0, "fifth"],
-	[perfectFifth * 16, 0.05, scaledMinute * 4, 0, "fifth"],
+	[perfectFifth * 16, 0.005, scaledMinute * 4, 0, "fifth"],
+	[perfectFifth * 16, 0.005, scaledMinute * 4, 0, "fifth"],
 ];
 
 r = Routine({
