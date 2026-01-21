@@ -53,7 +53,7 @@ SynthDef(
 
 (
 // Calculate note frequencies
-var root = 65.41, // Low C
+var root = 61.73, // Low B
 minorSecond = root * (15/14),
 majorSecond = root * (8/7),
 septimalMinorThird = root * (7/6),
