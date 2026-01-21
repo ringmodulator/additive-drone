@@ -37,6 +37,18 @@ SynthDef(
 	}
 ).add;
 
+// Master fader synth
+// Adds volume fades at the beginning and end of the piece
+SynthDef(
+	\fader,
+	{
+		|in = 2, out = 0, seconds = 1200|
+		var sig, env;
+		env = Env.new(levels: [0, 1, 1, 0], times: [30, seconds - 90, 60], curve: \sine);
+		sig = In.ar(in, 2) * env.kr(doneAction: 2);
+		Out.ar(out, sig);
+	}
+).add;
 )
 
 (
@@ -90,7 +102,7 @@ score = [
 	[perfectFifth * 8, 0.01, seconds - (scaledMinute * 3), 0, "fifth"],
 	[perfectFifth * 8, 0.01, seconds - (scaledMinute * 3), scaledMinute, "fifth"],
 
-	// Introduce notes in chord, then rotate through octaves. This version switches between minor and major thirds and sevenths
+	// Introduce notes in chord, then rotate through octaves, switching between major and minor thirds and sevenths.
 
 	// Round 1
 	[perfectFourth * 2, 0.05, scaledMinute * 3, 0, "fourth"],
@@ -144,13 +156,14 @@ score = [
 ];
 
 r = Routine({
+	Synth.new(\fader, [\in, 2, \out, 0, \seconds, seconds]);
 	score.do({|note, c|
 		var freq = note[0],
 		amp = note[1],
 		loopDur = note[2],
 		waitTime = note[3],
 		message = note[4],
-		out = 0,
+		out = 2,
 		pause = rrand(1.0, 5.0),
 		sus = rrand(4.0, 8.0),
 		pan = rrand(-0.5, 0.5),
