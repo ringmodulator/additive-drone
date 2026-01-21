@@ -156,7 +156,7 @@ score = [
 ];
 
 r = Routine({
-	Synth.new(\fader, [\in, 2, \out, 0, \minutes, minutes]);
+	Synth.new(\fader, [\in, 2, \out, 0, \seconds, seconds]);
 	score.do({|note, c|
 		var freq = note[0],
 		amp = note[1],
