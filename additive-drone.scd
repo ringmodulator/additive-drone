@@ -25,7 +25,7 @@ Next goals:
 SynthDef(
 	\drone,
 	{
-	| out = 0, freq = 440, amp = 0.1, pause = 1, sus = 3, pan = 1 |
+	| out = 0, freq = 440, amp = 0.1, pause = 1, sus = 3, pan = 0.5 |
 	var env = Env.new(levels: [0, 0, 1, 1, 0], times: [pause, 4, sus, 8], curve: \sine);
 	// Nice, simple additive synth stolen from Stanford SC "gentle introduction" and modified a bit
 	var snd = Mix.fill(12, {
