@@ -37,6 +37,17 @@ SynthDef(
 	}
 ).add;
 
+SynthDef(
+	\fader,
+	{
+		|in = 2, out = 0, minutes = 20|
+		var seconds = minutes * 60,
+		env = Env.new(levels: [0, 1, 1, 0], times: [30, seconds - 60, 30], curve: \sine),
+		sig = In.ar(in, 2);
+		sig = sig * env.kr(doneAction: 2);
+		Out.ar(out, sig);
+	}
+).add;
 )
 
 (
@@ -90,7 +101,7 @@ score = [
 	[perfectFifth * 8, 0.01, seconds - (scaledMinute * 3), 0, "fifth"],
 	[perfectFifth * 8, 0.01, seconds - (scaledMinute * 3), scaledMinute, "fifth"],
 
-	// Introduce notes in chord, then rotate through octaves. This version switches between minor and major thirds and sevenths
+	// Introduce notes in chord, then rotate through octaves, switching between major and minor thirds and sevenths.
 
 	// Round 1
 	[perfectFourth * 2, 0.05, scaledMinute * 3, 0, "fourth"],
