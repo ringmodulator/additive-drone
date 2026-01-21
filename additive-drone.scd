@@ -42,11 +42,10 @@ SynthDef(
 SynthDef(
 	\fader,
 	{
-		|in = 2, out = 0, minutes = 20|
-		var seconds = minutes * 60,
-		env = Env.new(levels: [0, 1, 1, 0], times: [30, seconds - 60, 30], curve: \sine),
-		sig = In.ar(in, 2);
-		sig = sig * env.kr(doneAction: 2);
+		|in = 2, out = 0, seconds = 1200|
+		var sig, env;
+		env = Env.new(levels: [0, 1, 1, 0], times: [30, seconds - 90, 60], curve: \sine);
+		sig = In.ar(in, 2) * env.kr(doneAction: 2);
 		Out.ar(out, sig);
 	}
 ).add;
