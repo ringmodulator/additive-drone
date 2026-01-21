@@ -37,6 +37,8 @@ SynthDef(
 	}
 ).add;
 
+// Master fader synth
+// Adds volume fades at the beginning and end of the piece
 SynthDef(
 	\fader,
 	{
@@ -155,13 +157,14 @@ score = [
 ];
 
 r = Routine({
+	Synth.new(\fader, [\in, 2, \out, 0, \minutes, minutes]);
 	score.do({|note, c|
 		var freq = note[0],
 		amp = note[1],
 		loopDur = note[2],
 		waitTime = note[3],
 		message = note[4],
-		out = 0,
+		out = 2,
 		pause = rrand(1.0, 5.0),
 		sus = rrand(4.0, 8.0),
 		pan = rrand(-0.5, 0.5),
