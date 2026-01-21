@@ -166,7 +166,7 @@ r = Routine({
 		out = 2,
 		pause = rrand(1.0, 5.0),
 		sus = rrand(4.0, 8.0),
-		pan = rrand(-0.5, 0.5),
+		pan = rrand(0.1, 1),
 		dur = pause + sus + 12,
 		repeats = (loopDur/dur).round;
 
