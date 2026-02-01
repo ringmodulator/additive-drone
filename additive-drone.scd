@@ -25,7 +25,7 @@ Next goals:
 SynthDef(
 	\drone,
 	{
-	| out = 0, freq = 440, amp = 0.1, pause = 1, sus = 3, pan = 1 |
+	| out = 0, freq = 440, amp = 0.1, pause = 1, sus = 3, pan = 0.5 |
 	var env = Env.new(levels: [0, 0, 1, 1, 0], times: [pause, 4, sus, 8], curve: \sine);
 	// Nice, simple additive synth stolen from Stanford SC "gentle introduction" and modified a bit
 	var snd = Mix.fill(12, {
@@ -53,7 +53,8 @@ SynthDef(
 
 (
 // Calculate note frequencies
-var root = 65.41, // Low C
+// var root = 61.73, // Low B
+var root = 73.42, // Low D
 minorSecond = root * (15/14),
 majorSecond = root * (8/7),
 septimalMinorThird = root * (7/6),
@@ -70,7 +71,7 @@ majorSeventh = root * (15/8),
 
 // Set duration of piece in minutes and calculate total seconds and basic time unit (scaledMinute) of 1/20 of piece length. (The piece was originally 20 minutes long and scaledMinute that minute scaled to an arbitrary length.)
 
-minutes = 10,
+minutes = 20,
 seconds = minutes * 60,
 scaledMinute = seconds/20,
 
@@ -166,7 +167,7 @@ r = Routine({
 		out = 2,
 		pause = rrand(1.0, 5.0),
 		sus = rrand(4.0, 8.0),
-		pan = rrand(-0.5, 0.5),
+		pan = rrand(0.1, 0.5),
 		dur = pause + sus + 12,
 		repeats = (loopDur/dur).round;
 
