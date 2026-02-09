@@ -2,7 +2,7 @@ Server.default.options.numInputBusChannels = 0; // For use with AirPlay
 
 s.boot;
 
-// Version for Looky Here performance. Consider adding a noise generator to the instrument that can be controlled with the score.
+// Version for Looky Here performance. Consider adding a noise generator to the instrument that can be controlled with the score. Or could add a separate noise instrument with its own score. I think ending this in dark noise could be good.
 
 (
 // Drone instrument
@@ -75,43 +75,29 @@ score = [
 	[septimalMinorThird * 8, 0.01, seconds, 0, "minor third"],
 	[septimalMinorThird * 8, 0.01, seconds, scaledMinute * 2, "minor third"],
 
-	// minor sixths
+	// minor sixths (low)
 	[minorSixth, 0.1, seconds - (scaledMinute * 2), 0, "minor sixth"],
 	[minorSixth, 0.1, seconds - (scaledMinute * 2), 0, "minor sixth"],
-	[minorSixth, 0.1, seconds - (scaledMinute * 2), 0, "minor sixth"],
-	[minorSixth, 0.1, seconds - (scaledMinute * 2), 0, "minor sixth"],
-	[minorSixth * 2, 0.1, seconds - (scaledMinute * 2), 0, "minor sixth"],
-	[minorSixth * 2, 0.1, seconds - (scaledMinute * 2), 0, "minor sixth"],
 	[minorSixth * 2, 0.1, seconds - (scaledMinute * 2), 0, "minor sixth"],
 	[minorSixth * 2, 0.1, seconds - (scaledMinute * 2), scaledMinute * 2, "minor sixth"],
 
 	// harmonic sevenths (high)
 	[minorSeventh * 4, 0.025, seconds - (scaledMinute * 4), 0, "minor seventh"],
 	[minorSeventh * 4, 0.025, seconds - (scaledMinute * 4), 0, "minor seventh"],
-	[minorSeventh * 4, 0.025, seconds - (scaledMinute * 4), 0, "minor seventh"],
-	[minorSeventh * 4, 0.025, seconds - (scaledMinute * 4), 0, "minor seventh"],
-	[minorSeventh * 8, 0.01, seconds - (scaledMinute * 4), 0, "minor seventh"],
-	[minorSeventh * 8, 0.01, seconds - (scaledMinute * 4), 0, "minor seventh"],
 	[minorSeventh * 8, 0.01, seconds - (scaledMinute * 4), 0, "minor seventh"],
 	[minorSeventh * 8, 0.01, seconds - (scaledMinute * 4), scaledMinute * 2, "minor seventh"],
 
-	// root and fifth
-	[root, 0.1, seconds, 0, "root"],
-	[root, 0.1, seconds, 0, "root"],
-	[perfectFifth, 0.1, seconds, 0, "root"],
-	[perfectFifth, 0.1, seconds, 0, "root"],
-	[root * 2, 0.1, seconds, 0, "root"],
-	[root * 2, 0.1, seconds, 0, "root"],
-	[perfectFifth * 2, 0.1, seconds, 0, "root"],
-	[perfectFifth * 2, 0.1, seconds, 0, "root"],
-	[root * 4, 0.25, seconds, 0, "root"],
-	[root * 4, 0.25, seconds, 0, "root"],
-	[perfectFifth * 4, 0.25, seconds, 0, "root"],
-	[perfectFifth * 4, 0.25, seconds, 0, "root"],
-    [root * 8, 0.01, seconds, 0, "root"],
-	[root * 8, 0.01, seconds, 0, "root"],
-	[perfectFifth * 4, 0.01, seconds, 0, "root"],
-	[perfectFifth * 4, 0.01, seconds, 0, "root"],
+	// root and fifth (low)
+	[root, 0.1, seconds - (scaledMinute * 2), 0, "root"],
+	[perfectFifth, 0.1, seconds - (scaledMinute * 2), 0, "fifth"],
+	[root * 2, 0.1, seconds - (scaledMinute * 2), 0, "root"],
+	[perfectFifth * 2, 0.1, seconds - (scaledMinute * 2), scaledMinute, "fifth"],
+
+	// root and fifth (high)
+	[root * 4, 0.25, seconds - (scaledMinute * 2), 0, "root"],
+	[perfectFifth * 4, 0.25, seconds - (scaledMinute * 2), 0, "fifth"],
+    [root * 8, 0.01, seconds - (scaledMinute * 2), 0, "root"],
+	[perfectFifth * 8, 0.01, seconds - (scaledMinute * 2), 0, "fifth"],
 ];
 
 r = Routine({
