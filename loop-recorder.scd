@@ -20,7 +20,7 @@ SynthDef(
 			var partial = counter + 1; // don't start partials from zero
 			SinOsc.ar(partial * freq * rrand(0.999, 1.001), mul: 1/partial.squared) * (amp * env.kr(doneAction: 2));});
 		snd = Pan2.ar(snd, SinOsc.kr(pan));
-		Out.ar(out, snd);
+		// Out.ar(out, snd);
 	}
 ).add;
 
@@ -50,7 +50,7 @@ SynthDef(
 		delay1 = CombC.ar(in, 10, 10, 5000, 0.8),
 		delay2 = CombC.ar(in, 10.6, 10.6, 5000, 0.8),
 		snd = delay1 * delay2;
-		Out.ar(out, snd);
+		Out.ar(out, [snd, in]);
 	}
 ).add;
 
