@@ -1,4 +1,4 @@
-# additive-drone
+# Additive Drone
 
 Looping drone instrument with additive synthesis, made with SuperCollider. This repo contains 2 pieces made with this instrument:
 
