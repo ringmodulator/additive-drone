@@ -2,20 +2,7 @@ Server.default.options.numInputBusChannels = 0; // For use with AirPlay
 
 s.boot;
 
-/*
-Initial goals for this piece:
-
-- Synth is a simple additive instrument with an ASR envelope that includes an initial silent pause.
-- Piece will be made up of loops that fall out of alignment because the pause and sustain segments are randomized.
-- There will be a "score" that says when each loop starts and ends and specifies frequency and any other parameters.
-- Piece will use the same tuning system as "7 limit drone".
-
-Next goals:
-
-- Add an overall volume envelope so that the piece fades out instead of the last loop just ending
-- Add an output bus with filtering and/or other effects.
-
-*/
+// Pretty drone that can be scaled to different lengths by changing the value of variable "minutes".
 
 (
 // Drone instrument
@@ -71,7 +58,7 @@ majorSeventh = root * (15/8),
 
 // Set duration of piece in minutes and calculate total seconds and basic time unit (scaledMinute) of 1/20 of piece length. (The piece was originally 20 minutes long and scaledMinute that minute scaled to an arbitrary length.)
 
-minutes = 20,
+minutes = 60,
 seconds = minutes * 60,
 scaledMinute = seconds/20,
 
