@@ -1,3 +1,6 @@
+// Tuning utility for performance of "Looky Here" version of this piece. 
+// Cycles through the notes of the guitar tuning for tuning by ear.
+
 s.boot;
 
 (

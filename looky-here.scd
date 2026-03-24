@@ -2,7 +2,19 @@
 Server.default.options.memSize = 65536;
 s.boot;
 
-// Version for Looky Here performance.
+/* 
+
+Version for 2026-03-05 Looky Here performance that includes a ring modulating looper for guitar.
+
+Guitar tuning for this piece (low to high):
+* D (root)
+* A (fifth)
+* D (root)
+* F - 33.2 cents (septimal minor third)
+* Bb - 35.1 cents (septimal subminor sixth)
+* C - 31.2 cents (harmonic seventh)
+
+*/
 
 (
 // Drone instrument
