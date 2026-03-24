@@ -83,7 +83,7 @@ score = [
 	[root, 0.1, seconds, 0, "root"],
 	[root, 0.1, seconds, 0, "root"],
 	[perfectFifth, 0.1, seconds, 0, "fifth"],
-	[perfectFifth, 0.1, seconds, 60, "fifth"],
+	[perfectFifth, 0.1, seconds, scaledMinute, "fifth"],
 
 	// Second group of root/fifth drones
 	[root * 2, 0.1, seconds - scaledMinute, 0, "root"],
