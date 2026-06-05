@@ -27,6 +27,28 @@ SynthDef(
 	}
 ).add;
 
+// Guitar
+SynthDef(
+	\guitar,
+	{
+	| out = 8, mul = 0.2, rt60Lo = 10, rt60Hi = 30, seconds = 1200 |
+		var in = SoundIn.ar(0) * mul;
+		var env = Env.new(levels: [rt60Lo, rt60Hi], times: [seconds], curve: \lin);
+		var reverb = NHHall.ar(Pan2.ar(in, 0.0),
+			rt60: env.kr,
+			stereo: 0.5,
+			lowFreq: 200,
+			lowRatio: 0.5,
+			hiFreq: 4000,
+			hiRatio: 0.5,
+			earlyDiffusion: 0.5,
+			lateDiffusion: 0.5,
+			modRate: 0.2,
+			modDepth: 0.3);
+		Out.ar (out, reverb + (in/2));
+	}
+).add;
+
 // Master fader synth
 // Adds volume fades at the beginning and end of the piece
 SynthDef(
@@ -44,7 +66,9 @@ SynthDef(
 (
 // Calculate note frequencies
 // var root = 61.73, // Low B
-var root = 73.42, // Low D
+// var root = 73.42, // Low D
+var root = 98, // G
+// var root = 110, // A
 minorSecond = root * (15/14),
 majorSecond = root * (8/7),
 septimalMinorThird = root * (7/6),
@@ -70,10 +94,10 @@ scaledMinute = seconds/20,
 
 score = [
 	// Thick root/fifth drone for duration of piece. Octaves introduce gradually.
-	[root, 0.1, seconds, 2, 0, "root"],
-	[root, 0.1, seconds, 2, 0, "root"],
-	[perfectFifth, 0.1, seconds, 2, 0, "fifth"],
-	[perfectFifth, 0.1, seconds, 2, scaledMinute, "fifth"],
+	[root, 0.1, seconds, 1, 0, "root"],
+	[root, 0.1, seconds, 1, 0, "root"],
+	[perfectFifth, 0.1, seconds, 1, 0, "fifth"],
+	[perfectFifth, 0.1, seconds, 1, scaledMinute, "fifth"],
 
 	// Second group of root/fifth drones
 	[root * 2, 0.1, seconds - scaledMinute, 2, 0, "root"],
@@ -147,7 +171,8 @@ score = [
 ];
 
 r = Routine({
-	Synth.new(\fader, [\in, 2, \out, 0, \seconds, seconds]);
+	Synth.new(\fader, [\in, 8, \out, 0, \seconds, seconds]);
+	Synth.new(\guitar, [\out, 8]);
 	score.do({|note, c|
 		var freq = note[0],
 		amp = note[1],
@@ -155,8 +180,8 @@ r = Routine({
 		detune = note[3],
 		waitTime = note[4],
 		message = note[5],
-		out = 2,
-		pause = rrand(1.0, 5.0),
+		out = 8,
+		pause = rrand(1.0, 8.0),
 		sus = rrand(4.0, 8.0),
 		pan = rrand(0.1, 0.5),
 		dur = pause + sus + 16,
